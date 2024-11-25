@@ -24,6 +24,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install setuptools wheel twine
 
+    - name: Build the package
+      run: |
+        python setup.py sdist bdist_wheel
+
     - name: Upload package to PyPI
       run: |
         twine upload dist/*
